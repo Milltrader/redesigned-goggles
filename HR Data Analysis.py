@@ -58,13 +58,14 @@ ABHR_office.drop(columns=['employee_office_id','_merge'],
 ABHR_office.sort_index(inplace=True)
 ABHR_office.sort_index
 
-
+# auxiliary data for one of the first steps
 # def count_bigger_5(series):
 #     return (series > 5).sum()
 # x = ABHR_office.groupby('left').agg({'number_project':['median', count_bigger_5],
 #                                  'time_spend_company':['mean','median'],
 #                                  'Work_accident':'mean',
 #                                  'last_evaluation':['mean', 'std']}).round(2)
+
 ABHR_office.head()
 pivot1 = ABHR_office.pivot_table(index='Department',
                         columns=['left','salary'],
@@ -80,5 +81,4 @@ pivot2 = ABHR_office.pivot_table(index='time_spend_company',
 
 pivot2_filtered = pivot2[(pivot2[('mean','last_evaluation',0)]) > (pivot2[('mean','last_evaluation',1)])]
 
-print(pivot1_filtered.to_dict())
-print(pivot2_filtered.to_dict())
+
