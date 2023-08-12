@@ -1,3 +1,14 @@
+''' 
+This code works as a smart calculator (not the smartest, but it's trying), which supports several callable commands,
+gives specific errors if there are problems with the input, stores and implements variables (a = 1),
+prints them when called (a) and does calculations with them (a + 1 = 2). Moreover, it proceeds from infix to postfix 
+conversation, which allows the user to use parenthesis to set the subsequence of the calculations.
+The calculator supports *, ^, / operations as well and automatically deals with extra spaces, typing + or - signs several times (++++ = +).
+The code really lacks comments so far, but it will be fixed soon enough right when I will start presenting it to people
+
+'''
+
+
 import string
 import sys
 import re
