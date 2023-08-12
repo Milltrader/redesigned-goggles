@@ -8,7 +8,6 @@ The code really lacks comments so far, but it will be fixed soon enough right wh
 
 '''
 
-
 import string
 import sys
 import re
@@ -18,6 +17,8 @@ commands = ("/exit", "/help")
 Operators = set(['+', '-', '*', '/', '(', ')', '^'])  # collection of Operators
 Priority = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}  # dictionary having priorities of Operators
 split_symbols = r'(\^|\-|\*|\/|\+|\(|\))'
+var_dict = {}
+
 
 class InvalidExpression(Exception):
     pass
@@ -62,10 +63,7 @@ def action(numbers):
             numbers_cleared.append(i)
 
     return numbers_cleared
-
-
-
-
+    
 
 def infixToPostfix(expression):
     stack = []  # initialization of empty stack
@@ -110,13 +108,7 @@ def infixToPostfix(expression):
     result = stack_result[-1]
 
     return result
-
-
-
-
-
-var_dict = {}
-
+    
 
 def variable(user_input):
     global var_dict
