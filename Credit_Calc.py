@@ -1,7 +1,7 @@
 import math
 import argparse
 import sys
-parser = argparse.ArgumentParser(description="that's gonna be hard as fuck")
+parser = argparse.ArgumentParser(description="Data for calculations")
 parser.add_argument("--type", choices =["diff", "annuity"])
 parser.add_argument("--principal", default=0)
 parser.add_argument("--periods", default=0)
